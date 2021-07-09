@@ -23,16 +23,16 @@ def predict():
     glucose = int(request.form['glucose'])
 
     prediction= loadedModel.predict([[glucose,bmi,age]])
-    chances = loadedModel.predict_proba([[glucose,bmi,age]])
+    
 
     if prediction==[0]:
         prediction='Not Diabetic'
     else:
         prediction ='Diabetic'
         
-    showChances = str(round((np.amax(chances[0])*100),2))
+    
 
-    return render_template('diabetes.html', diagnosis_output= prediction, chances_output = showChances)
+    return render_template('diabetes.html', diagnosis_output= prediction)
 
 
 
