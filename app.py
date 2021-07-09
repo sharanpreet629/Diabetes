@@ -32,7 +32,7 @@ def predict():
         
     showChances = str(round((np.amax(chances[0])*100),2))
 
-    return render_template('diabetes.html', diagnosis_output= prediction, confidence_output = showChances)
+    return render_template('diabetes.html', diagnosis_output= prediction, chances_output = showChances)
 
 
 
